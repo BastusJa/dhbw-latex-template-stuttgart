@@ -1,0 +1,78 @@
+% Beware: Commenting out, changing or removing lines is only allowed where explicitly stated!
+
+% Set document variables
+\newcommand{\documentLanguage}{de} % or f.i. en
+
+\newcommand{\projectTitle}{Overkomplex Title}
+\newcommand{\projectType}{T2000}
+\newcommand{\authorOne}{Max Musterman}
+\newcommand{\submissionDate}{8. September 2025}
+\newcommand{\projectTimeframe}{3 Monate}
+\newcommand{\matriculationNumber}{5321326}
+\newcommand{\course}{INF23A}
+\newcommand{\company}{TRUMPF SE + Co. KG}
+\newcommand{\companyLocation}{Ditzingen}
+\newcommand{\tutor}{Betreuer}
+\newcommand{\secondTutor}{}
+\newcommand{\studyProgram}{Informatik}
+\newcommand{\dhbw}{Stuttgart}
+\newcommand{\headingTopLeft}{\dhbw}
+
+% Set heading and misc names
+\addto\captionsenglish{% Replace "english" with the language you use
+  \renewcommand{\contentsname}{Table of contents}%
+}
+\renewcommand{\listfigurename}{Abbildungsverzeichnis}
+\renewcommand{\figurename}{Abbildung}
+\renewcommand{\listtablename}{Tabellenverzeichnis}
+\renewcommand{\tablename}{Tabelle}
+\newcommand{\tableOfAcronymsName}{Abkürzungsverzeichnis}
+\newcommand{\tableOfUnitsName}{Einheitenverzeichnis}
+\renewcommand{\lstlistlistingname}{Quellcodeverzeichnis}
+\renewcommand{\lstlistingname}{Quellcode}
+\newcommand{\equationName}{Formel}
+\newcommand{\listOfEquationsName}{Formelverzeichnis}
+\newcommand{\userFrameName}{Rahmen}
+\newcommand{\listOfUserFramesName}{Rahmenverzeichnis}
+\definecolor{userFrameColor}{RGB}{218, 219, 243}
+\newcommand{\bibliographyName}{Literaturverzeichnis}
+\newcommand{\printMediaTitle}{Printquellen}
+\newcommand{\webMediaTitle}{Internetquellen}
+\newcommand{\BIBand}{und}
+\newcommand{\appendixName}{Anhang}
+\newcommand{\toDosName}{To-Do's}
+
+\newcommand{\mainLogo}{media/DHBW_Logo.png}
+\newcommand{\confidentialText}{Vertraulich}
+\newcommand{\projectTimeframeText}{Bearbeitungszeitraum}
+\newcommand{\matriculationNumberText}{Matrikelnummer}
+\newcommand{\courseText}{Kurs}
+\newcommand{\companyText}{Ausbildungsfirma}
+\newcommand{\tutorText}{Betreuer}
+\newcommand{\secondTutorText}{Zweitbetreuer}
+\newcommand{\tableContinuationText}{Fortsetzung auf der nächsten Seite}
+\newcommand{\tableContinuationTextPos}{l} % Can be set to l or c or r 
+\newcommand{\tableContinuationCaptionText}{(Fortsetzung)}
+\newcommand{\watermarkText}{Wasserzeichen}
+
+% Custom bib classification
+\defbibfilter{printMediaFilter}{
+  type=book or type=article
+}
+\defbibfilter{webMediaFilter}{
+  not type=book and not type=article
+}
+
+% Enable/Disable an option by activating/commenting the according line:
+% \newcommand{\listofunitsVisible}{}
+\newcommand{\listofacronymsVisible}{}
+\newcommand{\listoffiguresVisible}{}
+% \newcommand{\listoftablesVisible}{}
+% \newcommand{\listoflistedEquationsVisible}{}
+\newcommand{\listoflistingsVisible}{}
+% \newcommand{\listofuserFramesVisible}{}
+\newcommand{\secondLogo}{media/TRUMPF_Logo}
+% \newcommand{\watermarkActive}{}
+% \newcommand{\restrictedActive}{}
+% \newcommand{\alternateHeader}{}
+\newcommand{\toDosActive}{}

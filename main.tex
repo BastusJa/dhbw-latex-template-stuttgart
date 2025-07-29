@@ -1,0 +1,105 @@
+\input{frame/preamble}
+\input{frame/acronyms}
+
+\begin{document}
+
+% Optional To-Do notes list
+\ifdefined\toDosActive
+
+  \listoftodos[\toDosName]
+\fi
+
+% Disable page numbering
+\pagenumbering{gobble}
+
+\input{frame/frontpage}
+
+% Optional restriction notice if needed
+\ifdefined\restrictedActive
+
+  \include{frame/restrictionNotice}
+\fi
+
+\input{frame/declarationOfAuthenticity}
+
+% \input{content/abstract}
+
+% Table of contents
+\newpage
+\pdfbookmark{\contentsname}{toc}
+\pagestyle{plain}
+\pagenumbering{Roman}
+\tableofcontents
+
+\ifdefined\listofunitsVisible
+
+    \begingroup
+    % Table of units
+    \include{frame/units}
+    \markboth{\tableOfUnitsName}{\tableOfUnitsName}
+    % Add table of units to the table of content
+    \addcontentsline{toc}{chapter}{\tableOfUnitsName}
+    \endgroup
+  \fi
+
+  \ifdefined\listofacronymsVisible
+
+    \begingroup
+    % Table of acronyms
+    \printacronyms[include=abbrev,name=\tableOfAcronymsName,template=longtable]
+    \markboth{\tableOfAcronymsName}{\tableOfAcronymsName}
+    % Add table of acronyms to the table of content
+    \addcontentsline{toc}{chapter}{\tableOfAcronymsName}
+    \endgroup
+  \fi
+
+  \ifdefined\listoffiguresVisible
+
+    \listoffigures
+  \fi
+
+  \ifdefined\listoftablesVisible
+
+    \listoftables
+  \fi
+
+  \ifdefined\listoflistedEquationsVisible
+
+    \listoflistedEquations
+  \fi
+
+  \ifdefined\listoflistingsVisible
+
+    % List of code blocks
+    \lstlistoflistings
+  \fi
+
+  \ifdefined\listofuserFramesVisible
+
+    % List of frames
+    \listofuserFrames
+  \fi
+  \newpage
+
+% Set page numbering style back to arabic
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+% Load content (automatically generated import file)
+\input{content/contentCollection}
+
+% List of Citations
+% Standard bibliography
+\renewcommand{\bibname}{\bibliographyName}
+\printbibliography[heading=bibintoc] % Including of Bibliography | with option (heading=bibintoc) in table of contens and in the bookmarks of the pdf file
+% Bibliography filtered by print and web media
+% \renewcommand{\bibname}{\bibliographyName}
+% \printbibheading
+% \printbibliography[filter=printMediaFilter,heading=subbibliography,title={\printMediaTitle}]
+% \newpage
+% \printbibliography[filter=webMediaFilter,heading=subbibliography,title={\webMediaTitle}]
+
+% Load appendix (automatically generated import file)
+% \input{appendix/AUTOGEN_appendixCollection}
+
+\end{document}
